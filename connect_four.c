@@ -3,21 +3,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-//There are four possible ways to win:
-//XXXX => The distance between each X is 1
-//X
-//X
-//X
-//X => The distance between each X is 8
-//X
-// X
-//  X
-//   X => The distance between each X is 9
-//   X
-//  X
-// X
-//X => The distance between each X is 7
-
 //0  1  2  3  4  5  6  7
 //8  9 10 11 12 13 14 15
 //16 17 18 19 20 21 22 23
