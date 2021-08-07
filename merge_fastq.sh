@@ -10,9 +10,9 @@ read -r MAINDIR
 mkdir RESULT
 
 for DIR in $(find "${MAINDIR}" -type d); do
-    find "$DIR" -type f -name "*fasta.gz" -exec gunzip -k {} \;
-    cat "$DIR/*.fasta" > RESULT/$(basename "${DIR}").fasta
-    rm -f "$DIR"/*.fasta >/dev/null
+    find "$DIR" -type f -name "*fastq.gz" -exec gunzip -k {} \;
+    cat "$DIR/*.fastq" > RESULT/$(basename "${DIR}").fastq
+    rm -f "$DIR"/*.fastq >/dev/null
 done
 
 output "Done"
