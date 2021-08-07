@@ -15,8 +15,10 @@ if [ -f files2scan.txt ] || [ -f ${RESULT}.fasta ]; then
     exit 1
 fi
 
+output "Searching for files"
 find "$MAINDIR" -type f -name "*.fasta" > files2scan.txt
 
+output "Merging files"
 for file in $(cat files2scan.txt); do
     echo ">$(basename "${file}" | awk -F . '{ print $1 }')" >> ${RESULT}.fasta
     sed '1d' "${file}" >> ${RESULT}.fasta
