@@ -12,7 +12,7 @@ if [ -f result.fasta ]; then
     exit 1
 fi
 
-find "$MAINDIR" -type f -name "*.fasta" > files2scan.txt \;
+find "$MAINDIR" -type f -name "*.fasta" \; > files2scan.txt
 
 for file in `cat files2scan.txt`; do
     echo ">$(basename ${file})" > result.fasta
