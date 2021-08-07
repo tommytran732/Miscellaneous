@@ -14,6 +14,6 @@ output "Enter the directory to search: "
 read -r DIR
 
 output "Searching for files"
-find "${DIR}" -type f -exec md5sum {} \; >> md5sums.txt
+find "${DIR}" -type f -exec md5sum {} \; > md5sums.txt
 
 output "Done."
