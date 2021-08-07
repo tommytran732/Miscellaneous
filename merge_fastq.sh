@@ -27,7 +27,7 @@ for DIR in $(find "${MAINDIR}" -type d); do
         fi
         cat "$DIR"/*.fastq > "$MAINDIR"/RESULT/$(basename "${DIR}").fastq
         gzip "$MAINDIR"/RESULT/$(basename "${DIR}").fastq
-        if [ noCULL=0 ]; then
+        if [ "${noCULL}" == "0" ]; then
             rm -f "$DIR"/*.fastq
         fi
     fi
