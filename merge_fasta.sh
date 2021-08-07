@@ -7,7 +7,7 @@ output(){
 output "Please enter the main directory:"
 read -r MAINDIR
 
-if [ -f result.fasta ]; then
+if [ -f files2scan.txt ] || [ -f result.fasta ]; then
     output "result.fasta file already exist. Please make a back up of it and remove it from the current directory before running the script."
     exit 1
 fi
