@@ -5,7 +5,7 @@ output(){
 }
 
 output "Please enter the main directory:"
-read MAINDIR
+read -r MAINDIR
 
 if [ -f result.fasta ]; then
     output "result.fasta file already exist. Please make a back up of it and remove it from the current directory before running the script."
@@ -14,9 +14,9 @@ fi
 
 find "$MAINDIR" -type f -name "*.fasta" > files2scan.txt
 
-for file in `cat files2scan.txt`; do
-    echo ">$(basename ${file})" > result.fasta
-    sed '1d' ${file} > result.fasta
+for file in $(cat files2scan.txt); do
+    echo ">$(basename "${file}" | awk -F . '{ print $1 }')" >> result.fasta
+    sed '1d' "${file}" >> result.fasta
 done
 
 output "Cleaning up"
