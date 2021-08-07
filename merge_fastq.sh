@@ -7,6 +7,11 @@ output(){
 output "Please enter the main directory:"
 read -r MAINDIR
 
+if [ -d "$MAINDIR"/RESULT ]; then
+    output "The " "$MAINDIR" "/RESULT diretcory already exists. Please make a bacup of your files, remove it and run the script again."
+    exit 1
+fi
+
 mkdir "$MAINDIR"/RESULT
 
 for DIR in $(find "${MAINDIR}" -type d); do
