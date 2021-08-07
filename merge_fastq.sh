@@ -17,7 +17,7 @@ mkdir "$MAINDIR"/RESULT
 for DIR in $(find "${MAINDIR}" -type d); do
     if [ "${DIR}" != "$MAINDIR"/RESULT ] && [ "${DIR}" != "$MAINDIR" ];then
         find "$DIR" -type f -name "*fastq.gz" > "$DIR"/filesInDir.txt
-        if [ -s "$DIR"/filesInDir.txt ]; then
+        if [ ! -s "$DIR"/filesInDir.txt ]; then
             noCULL=1
         else
             for gzippedFile in $(cat "$DIR"/filesInDir.txt); do
