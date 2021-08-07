@@ -7,7 +7,7 @@ output(){
 output "Please enter the main directory:"
 read -r MAINDIR
 
-mkdir RESULT
+mkdir "$MAINDIR"/RESULT
 
 for DIR in $(find "${MAINDIR}" -type d); do
     find "$DIR" -type f -name "*fastq.gz" -exec gunzip -k {} \;
