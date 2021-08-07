@@ -12,7 +12,7 @@ mkdir "$MAINDIR"/RESULT
 for DIR in $(find "${MAINDIR}" -type d); do
     if [ "${DIR}" != "$MAINDIR"/RESULT ] && [ "${DIR}" != "$MAINDIR" ];then
         find "$DIR" -type f -name "*fastq.gz" -exec gunzip -k {} \;
-        cat "$DIR"/*.fastq > RESULT/$(basename "${DIR}").fastq
+        cat "$DIR"/*.fastq > "$MAINDIR"/RESULT/$(basename "${DIR}").fastq
         rm -f "$DIR"/*.fastq
     fi
 done
