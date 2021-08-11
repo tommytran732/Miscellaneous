@@ -12,6 +12,8 @@ if [ -d "$MAINDIR"/RESULT ]; then
     exit 1
 fi
 
+mkdir "$MAINDIR"/RESULT
+
 output "Enter the number of reads in subsample"
 read -r SIZE
 
