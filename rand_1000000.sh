@@ -16,7 +16,7 @@ output "Enter the number of reads in subsample"
 read -r SIZE
 
 for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
-    seqtk sample -s"${SIZE}" "${file}" 1000000 > "$MAINDIR"/RESULT/$(basename "${file}").fastq
+    seqtk sample -s100 "${file}" "${SIZE}" > "$MAINDIR"/RESULT/$(basename "${file}").fastq
 done
 
 output "Done"
