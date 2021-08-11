@@ -17,6 +17,7 @@ mkdir "$MAINDIR"/RESULT
 output "Enter the number of reads in subsample"
 read -r SIZE
 
+output "Running..."
 for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
     seqtk sample -s100 "${file}" "${SIZE}" > "$MAINDIR"/RESULT/$(basename "${file}").fastq
 done
