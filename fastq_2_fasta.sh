@@ -11,7 +11,7 @@ fi
 mkdir "$MAINDIR"/RESULT
 
 for file in $(find "$MAINDIR" -type f -name "*.fastq.gz"); do
-    sseqtk seq -a "${file}" > "$MAINDIR"/RESULT/$(basename "${file}" | awk -F . '{ print $1 }').fasta
+    seqtk seq -a "${file}" > "$MAINDIR"/RESULT/$(basename "${file}" | awk -F . '{ print $1 }').fasta
 done
 
 echo "All done. Have a good one."
