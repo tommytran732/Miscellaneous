@@ -20,6 +20,6 @@ read -r SIZE
 COMPSIZE=(( SIZE*4 ))
 
 output "Running..."
-find "$MAINDIR" -type f -name "*.fastq" -exec head -n "${COMPSIZE}" {} -exec tee "$MAINDIR"/RESULT/$(basename "${file}").fastq
+find "$MAINDIR" -type f -name "*.fastq" -exec head -n "${COMPSIZE}" {} \; | tee "$MAINDIR"/RESULT/$(basename "${file}").fastq
 
 output "Done"
