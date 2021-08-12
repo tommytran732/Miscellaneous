@@ -17,7 +17,7 @@ mkdir "$MAINDIR"/RESULT
 output "Enter the number of reads in subsample"
 read -r SIZE
 
-COMPSIZE=(( SIZE*4 ))
+COMPSIZE=$(( SIZE*4 ))
 
 output "Running..."
 find "$MAINDIR" -type f -name "*.fastq" -exec head -n "${COMPSIZE}" {} \; | tee "$MAINDIR"/RESULT/$(basename "${file}").fastq
