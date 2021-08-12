@@ -10,8 +10,8 @@ fi
 
 mkdir "$MAINDIR"/RESULT
 
-for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
-    sed -n '1~4s/^@/>/p;2~4p' "${file}" | tee "$MAINDIR"/RESULT/$(basename "${file}" | awk -F .).fasta
+for file in $(find "$MAINDIR" -type f -name "*.fastq.gz"); do
+    sseqtk seq -a "${file}" > "$MAINDIR"/RESULT/$(basename "${file}" | awk -F . '{ print $1 }').fasta
 done
 
 echo "All done. Have a good one."
