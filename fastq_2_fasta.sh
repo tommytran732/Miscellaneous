@@ -10,6 +10,6 @@ fi
 
 mkdir "$MAINDIR"/RESULT
 
-find "$MAINDIR" -type f -name "*.fastq" -exec sed -n '1~4s/^@/>/p;2~4p' -exec tee "$MAINDIR"/RESULT/$(basename {}).fasta \;
+find "$MAINDIR" -type f -name "*.fastq" -exec sed -n '1~4s/^@/>/p;2~4p' {} \; | tee "$MAINDIR"/RESULT/$(basename {}).fast
 
 echo "All done. Have a good one."
