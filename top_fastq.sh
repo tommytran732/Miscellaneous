@@ -17,11 +17,11 @@ mkdir "$MAINDIR"/RESULT
 output "Enter the number of reads in subsample"
 read -r SIZE
 
-COMPSIZE=$(( SIZE*2 ))
+COMPSIZE=$(( SIZE*4 ))
 
 output "Running..."
 for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
-    head -n "${COMPSIZE}" "${file}" > "$MAINDIR"/RESULT/$(basename "${file}").fastq
+    head -n "${COMPSIZE}" "${file}" > "$MAINDIR"/RESULT/$(basename "${file}")
 done
 
 output "Done"
