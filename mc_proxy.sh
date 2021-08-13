@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #Executing commands in the script's directory
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit
 
 
 # Automatically restart it if it crashes

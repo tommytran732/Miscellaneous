@@ -25,4 +25,3 @@ for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
 done
 
 echo "All done. Have a good one."
-(ive not 
