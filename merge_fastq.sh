@@ -21,7 +21,7 @@ for DIR in $(find "${MAINDIR}" -type d); do
             noCULL=1
         else
             for gzippedFile in $(cat "$DIR"/filesInDir.txt); do
-                gunzip -k ${gzippedFile}
+                gunzip -k "${gzippedFile}"
             done
             noCULL=0
         fi
