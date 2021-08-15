@@ -28,4 +28,4 @@ for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
     seqtk trimfq -b "${LEFT}" -e "${RIGHT}" "${file}" > "$MAINDIR"/RESULT/$(basename "${file}")
 done
 
-echo "All done. Have a good one."
+output "All done. Have a good one."
