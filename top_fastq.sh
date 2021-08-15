@@ -4,6 +4,23 @@ output(){
     echo -e '\e[36m'$1'\e[0m';
 }
 
+top_bottom_options() {
+    output "Do you want to take the top or bottom sequences?"
+    read -r choice
+    case $choice in
+        1 ) TOP_BOTTOM="head"
+            output "You have selected top sequences."
+            output ""
+            ;;
+        2 ) TOP_BOTTOM="tail"
+            output "You have selected bottom sequences."
+            output ""
+            ;;
+        * ) output "You did not enter a valid selection."
+            top_bottom_options
+    esac
+}
+
 output "Please enter the main directory:"
 read -r MAINDIR
 
@@ -21,7 +38,7 @@ COMPSIZE=$(( SIZE*4 ))
 
 output "Running..."
 for file in $(find "$MAINDIR" -type f -name "*.fastq"); do
-    head -n "${COMPSIZE}" "${file}" > "$MAINDIR"/RESULT/$(basename "${file}")
+    "${TOP_BOTTOM}" -n "${COMPSIZE}" "${file}" > "$MAINDIR"/RESULT/$(basename "${file}")
 done
 
 output "Done"
