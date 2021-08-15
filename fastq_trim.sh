@@ -1,5 +1,9 @@
 #!/bin/bash
 
+output(){
+    echo -e '\e[36m'$1'\e[0m';
+}
+
 echo "Please enter the main directory:"
 read -r MAINDIR
 
