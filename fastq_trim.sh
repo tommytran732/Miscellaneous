@@ -4,7 +4,7 @@ output(){
     echo -e '\e[36m'$1'\e[0m';
 }
 
-echo "Please enter the main directory:"
+output "Please enter the main directory:"
 read -r MAINDIR
 
 if [ -d "$MAINDIR"/RESULT ]; then
@@ -12,10 +12,10 @@ if [ -d "$MAINDIR"/RESULT ]; then
     exit 1
 fi
 
-echo "Enter bp to trim left side:"
+output "Enter bp to trim left side:"
 read -r LEFT
 
-echo "Enter bp to trim right side:"
+output "Enter bp to trim right side:"
 read -r RIGHT
 
 mkdir "$MAINDIR"/RESULT
