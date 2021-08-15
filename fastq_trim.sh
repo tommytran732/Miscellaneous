@@ -8,7 +8,7 @@ output "Please enter the main directory:"
 read -r MAINDIR
 
 if [ -d "$MAINDIR"/RESULT ]; then
-    echo "RESULT folder already exists. Please make a back up of it and remove it from the current directory before running the script."
+    output "RESULT folder already exists. Please make a back up of it and remove it from the current directory before running the script."
     exit 1
 fi
 
