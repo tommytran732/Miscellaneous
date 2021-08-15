@@ -7,4 +7,4 @@ sudo dnf autoremove -y
 sudo dnf install neofetch butane net-tools java-latest-openjdk speedtest-cli -y
 
 #Pentest tools
-sudo dnf install nmap hydra wireshark sqlninja -y
+sudo dnf install nmap hydra wireshark -y
